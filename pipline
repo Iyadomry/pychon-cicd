@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+    stages {
+        stage('Clone GitHub Repo') {
+            steps {
+                 sh 'git clone https://github.com/Iyadomry/pychon-cicd.git'
+            }
+        }
+        stage('Build Docker Image') {
+            steps {
+                 sh ' cd /var/lib/jenkins/workspace/myapp/pychon-cicd'
+                 sh ' sleep 3'
+                 sh ' docker build --tag myapp . '
+            }
+        }
+        stage('Run Container name pythonapp ') {
+            steps {
+                 sh 'docker run -d --name pythonapp --rm myapp'
+            }
+        }
+        stage('Verify the running container') {
+            steps {
+                 sh 'docker exec pythonapp cat date.out'
+                 sh 'docker rm pythonapp -f'
+            }
+        }
+        stage('Delete the Container') {
+            steps {
+                 sh 'docker rm pythonapp -f'
+            }
+        }
+    }
+}
