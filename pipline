@@ -27,6 +27,7 @@ pipeline {
         stage('Delete the Container') {
             steps {
                  sh 'docker rm pythonapp -f'
+                 sh 'rm -rf /var/lib/jenkins/workspace/myapp/pychon-cicd/'
             }
         }
     }
