@@ -21,7 +21,6 @@ pipeline {
         stage('Verify the running container') {
             steps {
                  sh 'docker exec pythonapp cat date.out'
-                 sh 'docker rm pythonapp -f'
             }
         }
         stage('Delete the Container') {
