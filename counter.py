@@ -17,4 +17,4 @@ while True:
     f.close()
 
     # Sleep for 5 seconds then continue loop
-    time.sleep(5)
+    time.sleep(120)
