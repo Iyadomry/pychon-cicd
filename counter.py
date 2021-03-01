@@ -18,3 +18,4 @@ while True:
 
     # Sleep for 5 seconds then continue loop
     time.sleep(120)
+    print ("hello")
