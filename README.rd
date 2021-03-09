@@ -1,11 +1,11 @@
-The following repostry containe three files:
+The following repository contains three files:
 
 python code:
 Simple counter code
 
 Dockerfile:
-The docker file is python Image container that copy the code of python and excute it .
+The docker file is a python Image container that copies the code of python and executes it.
 
 
-Jenkins pipline:
-Contains the steps get full CI/CD
+Jenkins pipeline:
+Contains the steps to get full CI/CD
