@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-                 sh ' cd /var/lib/jenkins/workspace/myapp/pychon-cicd'
+                 sh ' cd /var/lib/jenkins/workspace/myapp/python-docker-jenkins'
                  sh ' sleep 3'
                  sh ' docker build --tag myapp . '
             }
@@ -26,7 +26,7 @@ pipeline {
         stage('Delete the Container') {
             steps {
                  sh 'docker rm pythonapp -f'
-                 sh 'rm -rf /var/lib/jenkins/workspace/myapp/pychon-cicd/'
+                 sh 'rm -rf /var/lib/jenkins/workspace/myapp/python-docker-jenkins/'
             }
         }
     }
