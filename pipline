@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone GitHub Repo') {
             steps {
-                 sh 'git clone https://github.com/Iyadomry/pychon-cicd.git'
+                 sh 'git clone https://github.com/Iyadomry/python-docker-jenkins.git'
             }
         }
         stage('Build Docker Image') {
